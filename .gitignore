@@ -1,0 +1,13 @@
+# Entorno virtual
+venv/
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+# Archivos de entorno
+.env
+# Configuración de IDEs
+.vscode/
+.idea/
+# Sistema
+.DS_Store
