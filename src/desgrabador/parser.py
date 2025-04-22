@@ -12,9 +12,14 @@ def transcribe_audio(
     """
     Transcribe con Whisper, soporta modelo, idioma, temperatura y device.
     """
-    model = whisper.load_model(model_size).to(device)
+    model = whisper.load_model(model_size, device=device)
     result = model.transcribe(
         str(audio_path), language=language, temperature=[temperature]
+    )
+    result = model.transcribe(
+         str(audio_path),
+         language=language,
+         temperature=[temperature]
     )
     return result
 

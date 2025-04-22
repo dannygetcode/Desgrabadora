@@ -83,7 +83,9 @@ def aislar_voz(input_wav: Path, output_wav: Path) -> Path:
     """
     subprocess.run([
         'demucs', str(input_wav),
-        '--two-stems=vocals', '-n', 'htdemucs', '--out_format', 'mp3'
+        '--two-stems', 'vocals',
+        '-n', 'htdemucs',
+        '--mp3'
     ], check=True)
     sep_dir = Path('separated') / 'htdemucs' / input_wav.stem
     vocals_mp3 = sep_dir / 'vocals.mp3'
